@@ -1,0 +1,119 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[serbian]{babel}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\renewcommand*\contentsname{Sadržaj}
+
+\begin{document}
+
+\begin{titlepage}
+
+\centering
+\textnormal{\large Elektrotehnički fakultet Univerziteta u Beogradu}\\[0.1cm]
+\textnormal{\large Prinicipi softverskog inženjerstva}\\[3cm]
+
+\textnormal{\normalsize - Platforma za organizovanje volonterskih akcija -}\\\vspace{-5mm}
+\rule{\textwidth}{0.4pt}
+{\huge \bfseries Specifikacija scenarija upotrebe:\\ 
+AUTENTIKACIJA KORISNIKA\par}\vspace{-1mm}
+\rule{\textwidth}{0.4pt}\\\vspace{1mm}
+\textnormal{\large Autor: Stefan Bajić}\\[6cm]
+
+\includegraphics[scale=0.5]{logo.jpg}\\
+\vfill
+\textnormal{\normalsize Verzija 1.0}\\
+
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+\section{Uvod}
+\subsection{Rezime}
+Definisanje scenarija upotrebe pri prijavi korisnika na sistem, sa primerima odgovarajućih HTML stranica.
+\subsection{Namena dokumenta i ciljne grupe}
+Dokument će koristiti svi članovi projektnog tima u razvoju projekta i testiranju, a može se koristiti i pri pisanju uputstva za upotrebu.
+\subsection{Reference}
+\begin{enumerate}
+    \item Projektni zadatak
+    \item Uputstvo za pisanje specifikacije scenarija upotrebe funkcionalnosti
+\end{enumerate}
+\subsection{Otvorena pitanja}
+\begin{center}
+\begin{tabular}{| >{\centering\arraybackslash}m{1.9cm} | >{\centering\arraybackslash}m{4.9cm} | >{\centering\arraybackslash}m{4.9cm} |}
+\hline
+\rowcolor[HTML]{000000} 
+{\color[HTML]{FFFFFF} Redni broj } & {\color[HTML]{FFFFFF} Opis } & {\color[HTML]{FFFFFF} Rešenje } \\ \hline
+ &  &  \\ \hline
+ &  &  \\ \hline
+ &  &  \\ \hline
+ &  &  \\ \hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+\section{Scenario registracije korisnika}
+\subsection{Kratak opis}
+Gost sistema može, ukoliko želi i ukoliko ima nalog, da se prijavi na sistem unošenjem ličnih
+podataka (korisničko ime i lozinka). Vrši se provera čitanjem iz baze podataka i ukoliko se podaci poklapaju korisnik se uspešno prijavljuje i dobija određene dodatne slobode.
+\subsection{Tok događaja}
+\subsubsection{\underline{Korisnik se uspešno prijavljuje na sistem}}
+\begin{enumerate}
+    \item Korisnik odabirom polja \textit{Login} dolazi na stranicu za prijavu
+    \item Korisnik unosi korisničko ime i lozinku
+    \item Korisnik pritiska dugme \textit{Login}
+    \item Sistem proverava uneto korisničko ime i lozinku sa već postojećim u bazi podataka i ukoliko se poklapaju
+    \item Sistem prebacuje korisnika na početnu stranicu
+\end{enumerate}
+
+\subsubsection{Nepostojeća kombinacija korisničkog imena i lozinke}
+\begin{enumerate}
+    \item Akcije 1-3 iz scenarija 2.2.1 su iste
+    \item Sistem proverava uneto korisničko ime i lozinku sa već postojećim u bazi podataka i prikazuje poruku o pogrešno unetoj lozinci ili korisničkom imenu
+\end{enumerate}
+
+\subsubsection{Korisnik nije pravilno ili uopšte popunio jedno ili oba polja potrebna za prijavu}
+\begin{enumerate}
+    \item Akcija 1 iz scenarija 2.2.1 je ista
+    \item Korisnik ne popunjava pravilno ili uopšte jedno ili oba polja potrebna za prijavu
+    \item Korisnik pritiska dugme \textit{Login}
+    \item Sistem obaveštava korisnika o njegovoj grešci odgovarajućom porukom
+\end{enumerate}
+\subsection{Posebni zahtevi}
+Nema
+\subsection{Preduslovi}
+Korisnik nije ulogovan na sistem.
+\subsection{Posledice}
+U slučaju uspeha korisnik je prijavljen na sistem.
+\newpage
+
+\section{Spisak izmena}
+\begin{center}
+\begin{tabular}{| >{\centering\arraybackslash}m{2cm} | >{\centering\arraybackslash}m{1.3cm} | >{\centering\arraybackslash}m{4.2cm} | >{\centering\arraybackslash}m{4.2cm} |}
+\hline
+\rowcolor[HTML]{000000} 
+{\color[HTML]{FFFFFF} Datum } & {\color[HTML]{FFFFFF} Verzija } & {\color[HTML]{FFFFFF} Opis izmene } & {\color[HTML]{FFFFFF} Autor } \\ \hline
+14.03.2016 & 1.0 & Osnovna verzija & Stefan Bajić \\ \hline
+ &  &  &  \\ \hline
+ &  &  &  \\ \hline
+ &  &  &  \\ \hline
+ &  &  &  \\ \hline
+ &  &  &  \\ \hline
+\end{tabular}
+\end{center}
+
+\end{document}

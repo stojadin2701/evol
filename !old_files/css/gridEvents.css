@@ -1,0 +1,25 @@
+/* Author: Stefan Bajić */
+
+.caption {
+  height: 130px;
+  overflow: hidden;
+}
+
+.thumbnail img {
+  width: 100%;
+}
+
+.date_and_comments {
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #eaac59;
+}
+
+.thumbnail {
+  padding: 0;
+}
+
+.thumbnail .caption-full {
+  padding: 9px;
+  color: #333;
+}

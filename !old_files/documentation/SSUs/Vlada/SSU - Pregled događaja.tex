@@ -1,0 +1,97 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[serbian]{babel}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\renewcommand*\contentsname{Sadržaj}
+
+\begin{document}
+
+\begin{titlepage}
+
+\centering
+\textnormal{\large Elektrotehnički fakultet Univerziteta u Beogradu}\\[0.1cm]
+\textnormal{\large Prinicipi softverskog inženjerstva}\\[3cm]
+
+\textnormal{\normalsize - Platforma za organizovanje volonterskih akcija -}\\\vspace{-5mm}
+\rule{\textwidth}{0.4pt}
+{\huge \bfseries Specifikacija scenarija upotrebe:\\ 
+PREGLED DOGAĐAJA\par}\vspace{-1mm}
+\rule{\textwidth}{0.4pt}\\\vspace{1mm}
+\textnormal{\large Autor: Vladimir Nikolić}\\[6cm]
+
+\includegraphics[scale=0.5]{logo.jpg}\\
+\vfill
+\textnormal{\normalsize Verzija 1.0}\\
+
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+\section{Uvod}
+\subsection{Rezime}
+Definisanje scenarija upotrebe pri pregledu događaja, sa primerima odgovarajućih HTML stranica.
+\subsection{Namena dokumenta i ciljne grupe}
+Dokument će koristiti svi članovi projektnog tima u razvoju projekta i testiranju, a može se koristiti i pri pisanju uputstva za upotrebu.
+\subsection{Reference}
+\begin{enumerate}
+    \item Projektni zadatak
+    \item Uputstvo za pisanje specifikacije scenarija upotrebe funkcionalnosti
+\end{enumerate}
+\subsection{Otvorena pitanja}
+\begin{center}
+\begin{tabular}{| >{\centering\arraybackslash}m{1.9cm} | >{\centering\arraybackslash}m{4.9cm} | >{\centering\arraybackslash}m{4.9cm} |}
+\hline
+\rowcolor[HTML]{000000} 
+{\color[HTML]{FFFFFF} Redni broj } & {\color[HTML]{FFFFFF} Opis } & {\color[HTML]{FFFFFF} Rešenje } \\ \hline
+ &  & \\ \hline
+ &  &  \\ \hline
+ &  &  \\ \hline
+ &  &  \\ \hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+\section{Scenario pregleda događaja}
+\subsection{Kratak opis}
+Svi korisnici sistema, registrovani ili ne, imaju pregled aktuelnih i završenih događaja, kao i komentara ostalih korisnika.
+\subsection{Tok događaja}
+\subsubsection{\underline{Korisnik otvara događaj}}
+Klikom na događaj sa glavne strane, korisnik se prebacuje na stranicu samog događaja.
+\subsection{Posebni zahtevi}
+Nema.
+\subsection{Preduslovi}
+Nema.
+\subsection{Posledice}
+Nema.
+\newpage
+
+\section{Spisak izmena}
+\begin{center}
+\begin{tabular}{| >{\centering\arraybackslash}m{2cm} | >{\centering\arraybackslash}m{1.3cm} | >{\centering\arraybackslash}m{4.2cm} | >{\centering\arraybackslash}m{4.2cm} |}
+\hline
+\rowcolor[HTML]{000000} 
+{\color[HTML]{FFFFFF} Datum } & {\color[HTML]{FFFFFF} Verzija } & {\color[HTML]{FFFFFF} Opis } & {\color[HTML]{FFFFFF} Autor } \\ \hline
+10.03.2016 & 1.0 & Osnovna verzija & Vladimir Nikolić \\ \hline
+ &  &  &  \\ \hline
+ &  &  &  \\ \hline
+ &  &  &  \\ \hline
+
+\end{tabular}
+\end{center}
+
+\end{document}

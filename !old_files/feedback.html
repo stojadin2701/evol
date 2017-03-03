@@ -1,0 +1,330 @@
+<!-- Author: Ana Peško -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Feedback</title>
+	
+	<!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="img/icon.png"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/register.css" rel="stylesheet">
+    <link href="css/shared.css" rel="stylesheet">
+	
+	<!-- Font Awesome -->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body onload="userCheck()">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="navbar-brand navbar-brand-img" src="img/icon.png">
+                <a class="navbar-brand navbar-brand-text" href="index.html">evol</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li id="home">
+                        <a href="home.html">Home</a>
+                    </li>                        
+                    <li>
+                        <a href="index.html">Events</a>
+                    </li>
+                    <li>
+                        <a href="feedback.html">Feedback</a>
+                    </li>
+                    <li id="mod">
+                        <a href="mod.html">Mod</a>
+                    </li>
+                    <li id="admin">
+                        <a href="admin.html">Admin</a>
+                    </li>
+                    <li id="register">
+                        <a href="register.html">Register</a>
+                    </li>
+                    <li id="login">
+                        <a href="login.html">Login</a>
+                    </li>
+                    <li id="logout">
+                        <a href="#" onclick="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div> <!-- /.container -->
+    </nav> 
+
+    <!--
+	<div class="container">
+		<form class="form-signin">
+			<h2 class="form-signin-heading">Register</h2>
+			<label for="inputUsername" class="sr-only">Username</label>
+			<input type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+			<label for="inputEmail" class="sr-only">Email address</label>
+			<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+			<label for="inputPassword" class="sr-only">Password (Confirm)</label>
+			<input type="password" id="inputPasswordConfirm" class="form-control" placeholder="Password (Confirm)" required>
+			<a id="link" href="#"><button class="btn btn-lg btn-primary btn-block" type="submit" onclick="register()">Register</button></a>
+		</form>
+    </div> <!-- /container -->
+	
+	
+	<div class="container">
+
+		<legend>Give us feedback!</legend>
+
+		<div id="suggestionBttn" class="col-md-4">
+			<button class="btn btn-lg btn-primary btn-block" onclick="displayForm('suggestion')">Make a suggestion</button>
+		</div>
+
+		<div id="eventBttn" class="col-md-4">
+			<button class="btn btn-lg btn-primary btn-block" onclick="displayForm('event')">Report an event</button>
+		</div>
+
+		<div id="userBttn" class="col-md-4">
+			<button class="btn btn-lg btn-primary btn-block" onclick="displayForm('user')">Report a user</button>
+		</div>
+
+		<form id="contact_form" class="form-horizontal" action="">
+
+			<fieldset>
+
+				<div id="suggestion" class="form-group" style="display: none;">
+					<label class="col-md-4 control-label">Write a suggestion</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+							<textarea class="form-control" name="suggestion" placeholder="Your suggestions"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<div id="event1" class="form-group" style="display: none;">
+					<label class="col-md-4 control-label" >Event URL</label> 
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input name="event" id="inputEventURL" class="form-control" placeholder="Event URL">
+						</div>
+					</div>
+				</div>
+
+				<div id="event2" class="form-group" style="display: none;">
+					<label class="col-md-4 control-label">Reason</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+							<textarea class="form-control" name="reason" placeholder="Why do you think this event is inappropriate?"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<div id="user1" class="form-group" style="display: none;">
+					<label class="col-md-4 control-label" >User URL</label> 
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input name="user" id="inputUserURL" class="form-control" placeholder="User URL">
+						</div>
+					</div>
+				</div>
+
+				<div id="user2" class="form-group" style="display: none;">
+					<label class="col-md-4 control-label">Reason</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+							<textarea class="form-control" name="reason" placeholder="Why do you think this user has behaved inappropriately?"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</fieldset>
+
+		</form>
+		
+		<div  class="col-md-4"></div>
+		<div id="submitBttn" class="col-md-4" style="display: none;">
+			<button class="btn btn-lg btn-primary btn-block" type="button" onclick="reset()">Send your feedback</button>
+		</div>
+				
+
+		<!--
+		<form class="well form-horizontal" id="contact_form" action="index.html">
+			<fieldset>
+
+
+				<legend>Register</legend>
+
+
+				<div class="form-group">
+					<label class="col-md-4 control-label" >Username</label> 
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">E-Mail</label>  
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+							<input name="email" type="text" id="inputEmail" class="form-control" placeholder="Email address" required>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">Password</label>  
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-lock fa-lg"></i></span>
+							<input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">Confirm password</label>  
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-lock fa-lg"></i></span>
+							<input name="password_confirm"type="password" id="inputPasswordConfirm" class="form-control" placeholder="Password (Confirm)" data-match="#inputPassword" required>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">First Name</label>  
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="form-group">
+					<label class="col-md-4 control-label" >Last Name</label> 
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+						</div>
+					</div>
+				</div>
+
+					   
+				<div class="form-group">
+					<label class="col-md-4 control-label">Phone #</label>  
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+							<input name="phone" placeholder="(###)###-####" class="form-control" type="text">
+						</div>
+					</div>
+				</div>
+
+				 
+				<div class="form-group">
+					<label class="col-md-4 control-label">City</label>  
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+							<input name="city" placeholder="City" class="form-control"  type="text">
+						</div>
+					</div>
+				</div>
+
+
+				  
+				<div class="form-group">
+					<label class="col-md-4 control-label">Short bio</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+							<textarea class="form-control" name="comment" placeholder="Short bio"></textarea>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> You have successfully created your account!</div>
+
+				<div class="form-group">
+					<label class="col-md-4 control-label"></label>
+					<div class="col-md-4">
+						<a id="link" href="#"><button class="btn btn-lg btn-primary btn-block" type="submit">Register</button></a>
+					</div>
+				</div>
+
+			</fieldset>
+		</form> <!-- Form -->
+	</div>
+	
+
+    <div class="container">
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-4">
+					</div>
+					<div class="col-lg-4">
+					</div>
+                    <div class="col-lg-4">
+                        <h5 class="text-muted">Copyright &copy; Untitled(1).tim 2016</h5>
+                    </div>
+            </div>
+        </footer>
+    </div> <!-- /.container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	
+    <!-- Custom JavaScript -->
+    <script src="js/feedback.js"></script>
+	<script src="js/shared.js"></script>
+
+    <!-- Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

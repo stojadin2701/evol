@@ -1,0 +1,207 @@
+<!-- Author: Nemanja Stojoski -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Keep track</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+    <!--  Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/create_event.css" rel="stylesheet">
+    <link href="css/shared.css" rel="stylesheet">
+    <link href="css/keep_track.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body onload="userCheck()">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="navbar-brand navbar-brand-img" src="img/icon.png">
+                <a class="navbar-brand navbar-brand-text" href="index.html">evol</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li id="home">
+                        <a href="home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Events</a>
+                    </li>
+                    <li id="feedback">
+                        <a href="feedback.html">Feedback</a>
+                    </li>
+                    <li id="mod">
+                        <a href="mod.html">Mod</a>
+                    </li>
+                    <li id="admin">
+                        <a href="admin.html">Admin</a>
+                    </li>
+                    <li id="register">
+                        <a href="register.html">Register</a>
+                    </li>
+                    <li id="login">
+                        <a href="login.html">Login</a>
+                    </li>
+                    <li id="logout">
+                        <a href="#" onclick="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+        <div class="form-group text-center">
+            <h3><a href = "event.html">-Cleaning Tašmajdan Park-</a></h3>
+            <h2>Untracked participants</h2>
+        </div>
+
+        <div class="row" id="participant1">
+            <div class="col-sm-1 col-sm-offset-1">
+                <div class="thumbnail">
+                    <img class="img-responsive user-photo" src="img/default_user.png">
+                </div>
+                <!-- /thumbnail -->
+            </div>
+            <!-- /col-sm-1 -->
+            <div class="col-sm-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong><a href="user.html">Stojadin2701</a></strong> &nbsp; <span id="stars" class="starrr"></span>
+                        <span class="check"><a class="check-participant" href="#" onclick="checkParticipant('participant1')"><i class="fa fa-check fa-2x"></i></a></span>
+                        <span class="not-present"><a class="check-participant" href="#" onclick="checkParticipant('participant1')"><i class="fa fa-times fa-2x"></i></a></span>
+                    </div>
+                    <div class="col-sm-13">
+                        <input type="text" class="form-control" id="location" name="location" placeholder="Write something about this participant's involvement" value="">
+                    </div>
+                </div>
+                <!-- /panel panel-default -->
+            </div>
+        </div>
+
+        <div class="row" id="participant2">
+            <div class="col-sm-1 col-sm-offset-1">
+                <div class="thumbnail">
+                    <img class="img-responsive user-photo" src="img/default_user.png">
+                </div>
+                <!-- /thumbnail -->
+            </div>
+            <!-- /col-sm-1 -->
+            <div class="col-sm-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong><a href="user.html">Ana Peško</a></strong> &nbsp; <span id="stars" class="starrr"></span>
+                        <span class="check"><a class="check-participant" href="#" onclick="checkParticipant('participant2')"><i class="fa fa-check fa-2x"></i></a></span>
+                        <span class="not-present"><a class="check-participant" href="#" onclick="checkParticipant('participant2')"><i class="fa fa-times fa-2x"></i></a></span>
+                    </div>
+                    <div class="col-sm-13">
+                        <input type="text" class="form-control" id="location" name="location" placeholder="Write something about this participant's involvement" value="">
+                    </div>
+                </div>
+                <!-- /panel panel-default -->
+            </div>
+        </div>
+
+        <div class="row" id="participant3">
+            <div class="col-sm-1 col-sm-offset-1">
+                <div class="thumbnail">
+                    <img class="img-responsive user-photo" src="img/default_user.png">
+                </div>
+                <!-- /thumbnail -->
+            </div>
+            <!-- /col-sm-1 -->
+            <div class="col-sm-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong><a href="user.html">VladaCat</a></strong> &nbsp; <span id="stars" class="starrr"></span>
+                        <span class="check"><a class="check-participant" href="#" onclick="checkParticipant('participant3')"><i class="fa fa-check fa-2x"></i></a></span>
+                        <span class="not-present"><a class="check-participant" href="#" onclick="checkParticipant('participant3')"><i class="fa fa-times fa-2x"></i></a></span>
+                    </div>
+                    <div class="col-sm-13">
+                        <input type="text" class="form-control" id="location" name="location" placeholder="Write something about this participant's involvement" value="">
+                    </div>
+                </div>
+                <!-- /panel panel-default -->
+            </div>
+        </div>
+
+        <div class="row" id="participant4">
+            <div class="col-sm-1 col-sm-offset-1">
+                <div class="thumbnail">
+                    <img class="img-responsive user-photo" src="img/default_user.png">
+                </div>
+                <!-- /thumbnail -->
+            </div>
+            <!-- /col-sm-1 -->
+            <div class="col-sm-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong><a href="user.html">BajicSmarac1337</a></strong> &nbsp; <span id="stars" class="starrr"></span>
+                        <span class="check"><a class="check-participant" href="#" onclick="checkParticipant('participant4')"><i class="fa fa-check fa-2x"></i></a></span>
+                        <span class="not-present"><a class="check-participant" href="#" onclick="checkParticipant('participant4')"><i class="fa fa-times fa-2x"></i></a></span>
+                    </div>
+                    <div class="col-sm-13">
+                        <input type="text" class="form-control" id="location" name="location" placeholder="Write something about this participant's involvement" value="">
+                    </div>
+                </div>
+                <!-- /panel panel-default -->
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary center-block" type="submit">Generate pdf</button>
+    </div>
+    <!-- /.container -->
+    <div class="container">
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-4">
+                </div>
+                <div class="col-lg-4">
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-muted">Copyright &copy; Untitled(1).tim 2016</h5>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- /.container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/listgroup.js" data-cover></script>
+    <!-- Custom JavaScript -->
+    <script src="js/keep_track.js"></script>
+    <script src="js/star.js"></script>
+    <!-- Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+</body>
+
+</html>

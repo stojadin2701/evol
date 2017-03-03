@@ -1,0 +1,112 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[serbian]{babel}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\renewcommand*\contentsname{Sadržaj}
+
+\begin{document}
+
+\begin{titlepage}
+
+\centering
+\textnormal{\large Elektrotehnicki fakultet Univerziteta u Beogradu}\\[0.1cm]
+\textnormal{\large Prinicipi softverskog inženjerstva}\\[3cm]
+
+\textnormal{\normalsize - Platforma za organizovanje volonterskih akcija -}\\\vspace{-5mm}
+\rule{\textwidth}{0.4pt}
+{\huge \bfseries Specifikacija scenarija upotrebe:\\ 
+BRISANJE DOGAdAJA\par}\vspace{-1mm}
+\rule{\textwidth}{0.4pt}\\\vspace{1mm}
+\textnormal{\large Autor: Ana Peško}\\[6cm]
+
+\includegraphics[scale=0.5]{logo.jpg}\\
+\vfill
+\textnormal{\normalsize Verzija 1.0}\\
+
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+\section{Uvod}
+\subsection{Rezime}
+Definisanje scenarija upotrebe pri brisanju dogadaja, sa primerima odgovarajucih HTML stranica.
+\subsection{Namena dokumenta i ciljne grupe}
+Dokument ce koristiti svi clanovi projektnog tima u razvoju projekta i testiranju, a može se koristiti i pri pisanju uputstva za upotrebu.
+\subsection{Reference}
+\begin{enumerate}
+    \item Projektni zadatak
+    \item Uputstvo za pisanje specifikacije scenarija upotrebe funkcionalnosti
+\end{enumerate}
+\subsection{Otvorena pitanja}
+\begin{center}
+\begin{tabular}{| >{\centering\arraybackslash}m{1.9cm} | >{\centering\arraybackslash}m{4.9cm} | >{\centering\arraybackslash}m{4.9cm} |}
+\hline
+\rowcolor[HTML]{000000} 
+{\color[HTML]{FFFFFF} Redni broj } & {\color[HTML]{FFFFFF} Opis } & {\color[HTML]{FFFFFF} Rešenje } \\ \hline
+ &  & \\ \hline
+ &  &  \\ \hline
+ &  &  \\ \hline
+ &  &  \\ \hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+\section{Scenario brisanja dogadaja}
+\subsection{Kratak opis}
+Registrovani korisnik ima mogucnost brisanja dogadaja u svakom trenutku.
+\subsection{Tok dogadaja}
+\subsubsection{\underline{Korisnik uspešno briše dogadaj}}
+\begin{enumerate}
+    \item Korisnik odabirom polja \textit{Home} dolazi na stranicu za pregled licnih i pohadanih dogadaja
+    \item Korisnik pregleda dogadaje koje trenutno organizuje (licne dogadaje)
+    \item Korisniku se odabirom dogadaja koji želi da izbriše (klikom na ikonicu za brisanje) prikazuje pitanje da li sigurno želi da obriše taj dogadaj
+    \item Korisnik bira opciju \textit{OK}
+    \item Sistem uklanja dogadaj iz baze podataka i vraca korisnika na stranicu za pregled licnih i pohadanih dogadaja
+\end{enumerate}
+
+\subsubsection{Korisnik bira da ne obriše dogadaj}
+\begin{enumerate}
+    \item Akcije 1-3 iz scenarija 2.2.1 su iste
+    \item Korisnik bira opciju \textit{Cancel}
+    \item Sistem vraca korisnika na stranicu za pregled licnih i pohadanih dogadaja bez uklanjanja dogadaja iz baze podataka
+\end{enumerate}
+
+\subsection{Posebni zahtevi}
+Nema.
+\subsection{Preduslovi}
+Korisnik je ulogovan na sistem i organizator je bar jednog aktuelnog dogadaja.
+\subsection{Posledice}
+U slucaju uspešnog toka scenarija, dogadaj je uklonjen iz sistema, u suprotnom dogadaj se i dalje nalazi u evidenciji sistema.
+
+\newpage
+
+\section{Spisak izmena}
+\begin{center}
+\begin{tabular}{| >{\centering\arraybackslash}m{2cm} | >{\centering\arraybackslash}m{1.3cm} | >{\centering\arraybackslash}m{4.2cm} | >{\centering\arraybackslash}m{4.2cm} |}
+\hline
+\rowcolor[HTML]{000000} 
+{\color[HTML]{FFFFFF} Datum } & {\color[HTML]{FFFFFF} Verzija } & {\color[HTML]{FFFFFF} Opis } & {\color[HTML]{FFFFFF} Autor } \\ \hline
+12.03.2016 & 1.0 & Osnovna verzija & Ana Peško \\ \hline
+ &  &  &  \\ \hline
+ &  &  &  \\ \hline
+ &  &  &  \\ \hline
+
+\end{tabular}
+\end{center}
+
+\end{document}

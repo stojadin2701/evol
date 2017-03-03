@@ -1,0 +1,144 @@
+<!-- Author: Ana Peško -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>evol</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="img/icon.png"/>
+    
+    <!--  Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/shared.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body onload="userCheck()">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="navbar-brand navbar-brand-img" src="img/icon.png">
+                <a class="navbar-brand navbar-brand-text" href="index.html">evol</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li id="home">
+                        <a href="home.html">Home</a>
+                    </li>                        
+                    <li>
+                        <a href="index.html">Events</a>
+                    </li>
+                    <li id = "feedback">
+                        <a href="feedback.html">Feedback</a>
+                    </li>
+                    <li id="mod">
+                        <a href="mod.html">Mod</a>
+                    </li>
+                    <li id="admin">
+                        <a href="admin.html">Admin</a>
+                    </li>
+                    <li id="register">
+                        <a href="register.html">Register</a>
+                    </li>
+                    <li id="login">
+                        <a href="login.html">Login</a>
+                    </li>
+                    <li id="logout">
+                        <a href="#" onclick="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div> <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+				<div class="media">
+					<div class="media-left media-middle">
+						<a href="#">
+							<img class="media-object" src="img/default_user.png" alt="...">
+						</a>
+					</div>
+					<div class="media-body">
+						<ul class="list-group">
+                            <li class="list-group-item">
+    							<h4 class="media-heading">Username:</h4> asdf123
+                            </li>
+                            <li class="list-group-item">
+    							<h4 class="media-heading">Contact:</h4> asdf@gmail.com
+                            </li>
+                            <li class="list-group-item">
+    							<h4 class="media-heading">First name:</h4> John
+                            </li>
+                            <li class="list-group-item">
+    							<h4 class="media-heading">Last name:</h4> Doe
+                            </li>
+                            <li class="list-group-item">
+    							<h4 class="media-heading">City:</h4> Belgrade
+                            </li>
+                            <li class="list-group-item">
+    							<h4 class="media-heading">Bio:</h4> <p>This is a short bio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </li>
+						</ul>
+					</div>
+				</div>
+				<hr />
+            </div>
+        </div>
+    </div> <!-- /.container -->
+
+    <div class="container">
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-4">
+					</div>
+					<div class="col-lg-4">
+					</div>
+                    <div class="col-lg-4">
+                        <h5 class="text-muted">Copyright &copy; Untitled(1).tim 2016</h5>
+                    </div>
+            </div>
+        </footer>
+    </div> <!-- /.container -->
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/listgroup.js" data-cover></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/shared.js"></script>
+
+    <!-- Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

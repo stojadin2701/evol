@@ -1,0 +1,20 @@
+/* Author: Stefan Bajić */
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.list-group {
+  max-height: 200px;
+  overflow-y: scroll; 
+}
+
+.search-input {
+  border-radius: 0;
+  border-left: 0;
+}
+
+.search-icon {
+  border-radius: 0;
+  border-right: 0;
+}

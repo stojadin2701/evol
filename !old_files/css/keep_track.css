@@ -1,0 +1,21 @@
+/* Author: Nemanja Stojoski */
+.check {
+	position: absolute;
+	right: 55px;
+	top: 7px;
+}
+
+.check a {
+	color: #5cb85c; 
+}
+
+
+.not-present{
+	position: absolute;
+	right: 25px;
+	top: 7px;
+}
+
+.not-present a{
+	color: #d9534f;
+}

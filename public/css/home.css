@@ -1,0 +1,53 @@
+/* Author: Ana Peško, Stefan Bajic */
+
+.past img {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    /*background-color: #D8D8D8;*/
+}
+.profile-pic {
+    position: relative;
+    display: inline-block;
+}
+.profile-pic:hover .edit {
+    display: block;
+}
+.profile-pic:hover .delete {
+    display: block;
+}
+.profile-pic:hover .keep-track {
+    display: block;
+}
+.edit {
+    padding-top: 7px;
+    padding-right: 28px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+.edit a {
+    color: #000;
+}
+.delete {
+    padding-top: 7px;
+    padding-right: 7px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+.delete a {
+    color: #000;
+}
+.keep-track {
+    padding-top: 7px;
+    padding-left: 7px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.keep-track a {
+    color: #000;
+}

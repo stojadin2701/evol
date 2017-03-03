@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://evol.app/" />
+<title>dismiss_feedback</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">dismiss_feedback</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Mod</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeXpathCount</td>
+	<td>xpath=//div[@class='panel-heading']</td>
+	<td>number_of_feedbacks</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id='delete-feedback']/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure you want to delete this user feedback?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeXpathCount</td>
+	<td>xpath=//div[@class='panel-heading']</td>
+	<td>number_of_feedbacks_after_dismiss</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>storedVars['number_of_feedbacks_after_dismiss']==storedVars['number_of_feedbacks'] - 1</td>
+	<td>true</td>
+</tr>
+</tbody></table>
+</body>
+</html>

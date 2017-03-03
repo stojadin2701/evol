@@ -1,0 +1,241 @@
+<!-- Author: Stefan Bajic -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>evol</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="img/icon.png"/>
+    
+    <!--  Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/shared.css" rel="stylesheet">
+    <link href="css/gridEvents.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body onload="userCheck()">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="navbar-brand navbar-brand-img" src="img/icon.png">
+                <a class="navbar-brand navbar-brand-text" href="index.html">evol</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li id="home">
+                        <a href="home.html">Home</a>
+                    </li>                        
+                    <li>
+                        <a href="index.html">Events</a>
+                    </li>
+                    <li id = "feedback">
+                        <a href="feedback.html">Feedback</a>
+                    </li>
+                    <li id="mod">
+                        <a href="mod.html">Mod</a>
+                    </li>
+                    <li id="admin">
+                        <a href="admin.html">Admin</a>
+                    </li>
+                    <li id="register">
+                        <a href="register.html">Register</a>
+                    </li>
+                    <li id="login">
+                        <a href="login.html">Login</a>
+                    </li>
+                    <li id="logout">
+                        <a href="#" onclick="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div> <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row"> 
+            <div class="col-md-3">
+                <!-- <p class="lead">Shop Name</p> -->
+                <div class="list-group">
+                    <a href="#" class="list-group-item" onclick="showSubcategories('category1')">Location</a>
+                    <div id="category1" class="list-group" style="display: none;" data-toggle="items">
+                        <a href="#" class="list-group-item">Beograd</a>
+                        <a href="#" class="list-group-item">Novi Sad</a>
+                    </div>
+                    <a href="#" class="list-group-item" onclick="showSubcategories('category2')">Type</a>
+                    <div id="category2" class="list-group" style="display: none;" data-toggle="items">
+                        <a href="#" class="list-group-item">Mental</a>
+                        <a href="#" class="list-group-item">Physical</a>
+                    </div>
+                    <a href="#" class="list-group-item" onclick="showSubcategories('category3')">Length</a>
+                    <div id="category3" class="list-group" style="display: none;" data-toggle="items">
+                        <a href="#" class="list-group-item">A Couple of Hours</a>
+                        <a href="#" class="list-group-item">A Day</a>
+                        <a href="#" class="list-group-item">A Couple of Days</a>
+                        <a href="#" class="list-group-item">A Week</a>
+                        <a href="#" class="list-group-item">A Month</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="row carousel-holder">
+                    <div class="col-md-12">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="slide-image" src="img/pexels-photo-38926.jpeg" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="img/food-salad-healthy-vegetables.jpg" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="img/nature-person-red-woman.jpg" alt="">
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="img/wood-nature-sunny-forest.jpg" alt="">
+                            <div class="caption">
+                                <h4>
+                                    <a href="event.html">Cleaning Tašmajdanski Park</a>
+                                </h4>
+                                <p>Let's organise and clean Tašmajdan Park.</p>
+                            </div>
+                            <div class="date_and_comments">
+                                <p class="pull-right">2 comments</p>
+                                <p>
+                                    10.4.2016
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="img/people-woman-coffee-meeting.jpg" alt="">
+                            <div class="caption">
+                                <h4>
+                                    <a href="#">Analysis</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="date_and_comments">
+                                <p class="pull-right">15 comments</p>
+                                <p>
+                                    12.12.2016
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="img/pexels-photo.jpg" alt="">
+                            <div class="caption">
+                                <h4>
+                                    <a href="#">Girls day out</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="date_and_comments">
+                                <p class="pull-right">12 comments</p>
+                                <p>
+                                    12.3.2016
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="img/pexels-photo-13918.jpeg" alt="">
+                            <div class="caption">
+                                <h4>
+                                    <a href="#">Making signs in nature</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="date_and_comments">
+                                <p class="pull-right">31 comments</p>
+                                <p>
+                                    20.4.2016
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- /.container -->
+
+    <div class="container">
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-4">
+					</div>
+					<div class="col-lg-4">
+					</div>
+                    <div class="col-lg-4">
+                        <h5 class="text-muted">Copyright &copy; Untitled(1).tim 2016</h5>
+                    </div>
+            </div>
+        </footer>
+    </div> <!-- /.container -->
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/listgroup.js" data-cover></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/shared.js"></script>
+
+    <!-- Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

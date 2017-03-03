@@ -1,0 +1,179 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[serbian]{babel}
+\usepackage{tabularx}
+%\usepackage[showframe]{geometry}
+%\usepackage{layout}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+\renewcommand*\contentsname{Sadržaj}
+
+\begin{document}
+
+\begin{titlepage}
+
+\centering
+\textnormal{\large Elektrotehnički fakultet Univerziteta u Beogradu}\\[0.1cm]
+\textnormal{\large Prinicipi softverskog inženjerstva}\\[2cm]
+
+\textnormal{\normalsize - Projektni zadatak -}\\\vspace{-5mm}
+\rule{\textwidth}{0.4pt}
+{\Huge \bfseries PLATFORMA ZA ORGANIZOVANJE VOLONTERSKIH AKCIJA \par}
+\rule{\textwidth}{0.4pt}\\\vspace{5mm}
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Autori:}\\
+Nemanja Stojoski\\
+Ana Peško\\
+Vladimir Nikolić\\
+Stefan Bajić
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervizor:} \\
+Dražen Drašković
+\end{flushright}
+\end{minipage}\\[4cm]
+\includegraphics[scale=0.5]{logo.jpg}\\
+\vfill
+\textnormal{\normalsize Verzija 1.2}\\
+
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+\section{Uvod}
+\subsection{Rezime}
+Ovaj projekat je deo praktične nastave predmeta \textit{Principi softverskog inženjerstva}. Platforma je namenjena svima koji žele da organizuju dobrovoljne akcije ili učestvuju u njima.
+\subsection{Namena dokumenta i ciljna grupa}
+Ovaj dokument definiše probleme koje platforma rešava, namenu platforme, funkcionalnosti koje pruža, zahteve koji su postavljeni, kao i ideje za dalje unapređivanje. Dokument je namenjen članovima tima, i klijentu (asistentu), kako bi se definisala materija koju treba modelovati. 
+
+\section{Opis problema}
+U ovom odeljku je dat opis problema i interpretacija njegovog rešenja.
+\subsection{Osnovna postavka}
+Pretraživanjem Interneta došlo se do zaključka da postojeće volonterske platforme ne pružaju dovoljno fleksibilnosti, kako volonterima, tako i organizatorima dobrovoljačkih akcija. Naša platforma pokušava da na jednostavan način obezbedi glavne funkcionalnosti takvog sistema, sa mogućnošću lakog dodavanja novih funkcionalnosti. Platforma omogućava korisnicima da kreiraju novi događaj, tj. akciju sa opisom, lokacijom, datumom održavanja, potrebnim brojem učesnika, i ostalim relevantnim informacijama. Nakon kreiranja događaja, on postaje vidljiv svim ostalim korisnicima, kako bi se oni mogli prijaviti na isti. Tokom održavanja, i nakon završetka događaja, organizator bi vodio evidenciju o učestvovanju prijavljenih korisnika, na osnovu koje bi se zaslužnim učesnicima dodeljivali virtuelni bedževi.
+\subsection{Termini i struktura problema}
+Korisnik formira \textbf{Događaj}. Svaki Događaj ima svoj naziv, datum i vreme početka i kraja, lokaciju, opis, tip događaja, datum do kada traju prijave, listu prijavljenih učesnika, komentare, slike.
+
+\newpage
+
+\section{Kategorije korisnika}
+Razlikujemo sledeće kategorije korisnika: gost, registrovani korisnik, moderator i administrator sistema.
+\subsection{Gost sajta}
+Gost sajta može da pregleda predstojeće događaje sortirane po raznim kriterijumima, a ima i mogućnost registracije ili prijave.
+\subsection{Registrovani korisnik}
+Registrovani korisnik nakon logovanja na sistem može da pregleda predstojeće događaje filtrirane po raznim kriterijumima, kao i celu arhivu događaja ili samo događaje na kojima je učestvovao. Ima mogućnost prijave i komentarisanja na događaj, kreiranja i vođenja događaja, kao i prijave neprimerenih događaja moderatorima.
+\subsection{Moderator}
+Moderator je korisnik, koji pored funkcionalnosti registrovanog korisnika, vodi računa o primerenosti događaja, prijavljujući neprimerena ponašanja administratorima sistema.
+\subsection{Administrator}
+Administrator obrađuje prijave poslate od strane moderatora, blokirajući ili brišući određene korisnike ili događaje. Takođe, ima mogućnost postavljanja moderatora.
+
+\section{Opis proizvoda}
+U ovom odeljku se daje pregled sistema, i karakteristika koje se nude njegovim korisnicima.
+\subsection{Pregled arhitekture sistema}
+Platforma je zamišljena na bazi dinamičkog Internet sajta postavljenog na Web server koji podržava PHP i Ajax. Postoji i server na kome je baza podataka MySQL u kojoj se čuvaju kako događaji tako i podaci o nalozima registrovanih korisnika, moderatora i administratora i njihove šifre za pristup. Web server uz pomoć PHP upita i pristupa bazi podataka kreira statički HTML kod koji se prosleđuje posetiocu.
+
+\subsection{Pregled karakteristika}
+\begin{center}
+\begin{tabular}{| >{\centering\arraybackslash}m{4.7cm} | >{\centering\arraybackslash}m{7cm} |}
+\hline
+\rowcolor[HTML]{000000} 
+{\color[HTML]{FFFFFF} Korist za korisnika } & {\color[HTML]{FFFFFF} Karakteristika koja je obezbeđuje } \\ \hline
+Platformska nezavisnost & Interfejs zasnovan na HTML-u i PHP-u zahteva samo postojanje Web browser-a i pristup Internetu\\ \hline
+Uvid u dostignuća korisnika & Mogućnost pregledanja dobijenih bedževa i prethodnih učestvovanja korisnika\\ \hline
+Sigurnost i poverljivost informacija & Pristup ličnim podatcima se štiti autentikacijom korisnika \\ \hline
+Laka organizacija događaja & Korisnicima je obezbeđen jednostavan interfejs za kreiranje događaja\\ \hline
+\end{tabular}
+\end{center}
+
+\section{Funkcionalni zahtevi}
+U ovom odeljku definišu se osnovne funkcije koje sistem treba da obezbedi različitim kategorijama korisnika.
+\subsection{Registracija korisnika}
+Gost sistema može, ukoliko želi, da kreira svoj nalog unošenjem ličnih podataka. Ti podaci će biti upisani u bazu podataka na osnovu kojih korisnik kasnije može da pristupa sistemu.
+\subsection{Autentikacija korisnika}
+Vrši se autentikacija registrovanih korisnika, moderatora i administratora unošenjem korisničkog imena i lozinke. Ovi podaci moraju da se poklope sa postojećim podacima o korisnicima u bazi podataka. Prijavljivanje se vrši na isti na način za sve korisnike. Nakon potvrđene autentikacije, korisnik može da interaguje sa sistemom na način koji mu je dozvoljen dodeljenim skupom funkcionalnosti.
+\subsection{Pregled događaja}
+Sve kategorije korisnika platforme imaju mogućnost pregleda aktivnih događaja na platformi po raličitim kriterijumima filtriranja. Događaji mogu biti filtrirani mestu održavanja, datumu početka događaja, dužini događaja i tipu.
+\subsection{Pravljenje događaja}
+Registrovani korisnik ima mogućnost pravljenja novih događaja unošenjem potrebnih informacija u odgovarajuću formu. Napravljene događaje moderatori moraju da odobre pre nego što postanu globalno vidljivi.
+\subsection{Brisanje događaja}
+Registrovani korisnik ima mogućnost brisanja sopstvenih događaja u svakom trenutku.
+\subsection{Prijavljivanje na događaj}
+Registrovani korisnik ima mogućnost prijavljivanja na određeni događaj ili odjavljivanja sa istog pre isteka roka za prijave.
+\subsection{Pregled ličnih i pohađanih događaja}
+Registrovani korisnici u svakom trenutku mogu da vide događaje koje su kreirali u prošlosti kao i one u kojima su učestvovali.
+\subsection{Pregled korisničnih profila}
+Osnovne informacije korisničkih profila su javne a korisnici po želji mogu omogućiti prikaz dodatnih.
+\subsection{Komentarisanje događaja}
+Registrovani korisnik ima mogućnost postavljanja komentara na izabrani događaj.
+\subsection{Evidencija prisutnosti i angažovanja}
+Registrovani korisnik koji je organizovao događaj ima obavezu da vodi evidenciju tokom održavanja i posle završetka događaja. Organizatoru se izdaje spisak prijavljenih korisnika u vidu pdf dokumenta kako bi se što lakše vodila evidencija o prisustvu i angažovanju tokom održavanja događaja. Nakon završetka događaja organizator je u obavezi da popuni odgovarajuću elektronsku formu radi raspodele virtuelnih bedževa zaslužnim učesnicima.
+\subsection{Izmena događaja}
+Tvorac događaja u svakom trenutku može vršiti proizvoljne modifikacije teksta stranice događaja kao i dodavanje novih slika a potom se te izmene šalju određenom moderatoru radi provere.
+\subsection{Slanje poruka moderatorima}
+Registrovanim korisnicima je omogućeno slanje poruka moderatorima iz određenih razloga preko stranice za feedback.
+\subsection{Moderiranje}
+Moderatori sajta preko njima spečificnog interfejsa mogu odobravati događaje, izmene događaja kao i imati pregled svih korisničkih poruka dobijenih preko stranice za feedback.
+\subsection{Imenovanje moderatora i oduzimanje moderatorskih prava}
+Administratori sajta mogu nekom korisniku dodeliti moderatorske privilegije ili ih oduzeti.
+
+\section{Pretpostavke i ograničenja}
+Sistem treba isprojektovati tako da dodavanje novih događaja bude što lakše, a istovremeno maksimalno automatizovano. Potrebno je težiti jedinstvenom dizajnu čitavog sajta. Takođe treba čuvati podatke o autorizaciji i obezbediti da ne dođe do neovlašćenog pristupa.
+
+\section{Kvalitet}
+Potrebno je izvršiti testiranje metodom crne kutije svih prethodno navedenih funkcionalnosti. Potrebno je izvršiti testiranje kapaciteta i brzine odziva kao i otpornosti na greške. Takođe, potrebno je posebnu pažnju posvetiti sprečavanju unosa malicioznog SQL koda koji bi ugrozio rad sistema.
+
+\section{Nefunkcionalni zahtevi}
+\subsection{Sistemski zahtevi}
+Za funkcionisanje sistema neophodno je da server ima instaliran modul za PHP i MySQL bazu podataka. Zbog korišćenja HTML tehnologije neophodno je obezbediti kompatibilnost sa skorijim verzijama važnijih Web browser-a.
+\subsection{Ostali zahtevi}
+Neophodno je obezbediti dinamičan odziv i vizuelnu dinamičnost stranice. To bi se postiglo korišćenjem Ajax-a i Javascript-a.
+
+\section{Zahtevi za korisničkom dokumentacijom}
+Prilikom registrovanja na sistem korisnici dobijaju kratka uputstva o mogućnostima platforme.
+
+\section{Plan i prioriteti}
+Potrebno je obezbediti sledeće primarne funkcionalnosti:
+\begin{itemize}
+  \item Registrovanje korisinka
+  \item Prijavljivanje korisnika na sistem
+  \item Kreiranje događaja
+  \item Prijavljivanje na događaj
+  \item Vođenje evidencije o događaju
+  \item Pretraga događaja po različitim kriterijumima
+  \item Komentarisanje  na događaj
+\end{itemize}
+U narednoj verziji mogle bi se proširiti funkcionalnosti platforme kao što su: prijavljivanje neregularnosti, dodavanje postojećih organizacija kao nove vrste korisnika, formiranje timova volontera, kreiranje foruma za lakšu komunikaciju između korisnika, itd.
+
+\newpage
+
+\section{Spisak izmena}
+\begin{center}
+\begin{tabular}{| >{\centering\arraybackslash}m{2cm} | >{\centering\arraybackslash}m{1.3cm} | >{\centering\arraybackslash}m{4.2cm} | >{\centering\arraybackslash}m{4.2cm} |}
+\hline
+\rowcolor[HTML]{000000} 
+{\color[HTML]{FFFFFF} Datum } & {\color[HTML]{FFFFFF} Verzija } & {\color[HTML]{FFFFFF} Opis } & {\color[HTML]{FFFFFF} Autor } \\ \hline
+05.03.2016 & 1.0 & Osnovna verzija & Nemanja Stojoski,
+Ana Peško \\ \hline
+09.03.2016 & 1.1 & Dodavanje novih funkcionalnih zahteva & Stefan Bajić, Nemanja Stojoski \\ \hline
+18.04.2016 & 1.2  & Manje izmene &  Stefan Bajić\\ \hline
+ &  &  &  \\ \hline
+\end{tabular}
+\end{center}
+
+\end{document}

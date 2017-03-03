@@ -1,0 +1,231 @@
+<!-- Author: Nemanja Stojoski -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mod page</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shared.css" rel="stylesheet">
+    <link href="css/gridEvents.css" rel="stylesheet">
+    <link href="css/mod.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="js/mod.js"></script>
+
+
+</head>
+
+<body onload="userCheck()">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="navbar-brand navbar-brand-img" src="img/icon.png">
+                <a class="navbar-brand navbar-brand-text" href="index.html">evol</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li id="home">
+                        <a href="home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Events</a>
+                    </li>
+                    <li id="feedback">
+                        <a href="feedback.html">Feedback</a>
+                    </li>
+                    <li id="mod">
+                        <a href="mod.html">Mod</a>
+                    </li>
+                    <li id="admin">
+                        <a href="admin.html">Admin</a>
+                    </li>
+                    <li id="register">
+                        <a href="register.html">Register</a>
+                    </li>
+                    <li id="login">
+                        <a href="login.html">Login</a>
+                    </li>
+                    <li id="logout">
+                        <a href="#" onclick="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+        <h3>Events to review</h3>
+        <div class="row">
+            <div id="event1" class="col-sm-4 col-lg-4 col-md-4">
+                <div class="profile-pic">
+                    <div class="thumbnail">
+                        <img src="img/people-woman-coffee-meeting.jpg" alt="">
+                        <div class="caption">
+                            <h4><a href="#">Analysis</a>
+						</h4>
+                            <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                        </div>
+                    </div>
+                    <div class="approve"><a id="approve-event" href="#" onclick="approveEvent('event1')"><i class="fa fa-check fa-2x"></i></a></div>
+                    <div class="remove"><a id="remove-event" href="#" onclick="removeEvent('event1')"><i class="fa fa-times fa-2x"></i></a></div>
+                </div>
+            </div>
+
+            <div id="event2" class="col-sm-4 col-lg-4 col-md-4">
+                <div class="profile-pic">
+                    <div class="thumbnail">
+                        <img src="img/pexels-photo.jpg" alt="">
+                        <div class="caption">
+                            <h4><a href="#">Girls day out</a>
+								</h4>
+                            <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="approve"><a id="approve-event" href="#" onclick="approveEvent('event2')"><i class="fa fa-check fa-2x"></i></a></div>
+                    <div class="remove"><a id="remove-event" href="#" onclick="removeEvent('event2')"><i class="fa fa-times fa-2x"></i></a></div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <h3>User Feedback</h3>
+        <div class="container">
+            <!-- /row -->
+            <div class="row" id="feedback1">
+                <div class="col-sm-1 col-sm-offset-0">
+                    <div class="thumbnail">
+                        <img class="img-responsive user-photo" src="img/default_user.png">
+                    </div>
+                    <!-- /thumbnail -->
+                </div>
+                <!-- /col-sm-1 -->
+                <div class="col-sm-7">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong><a href="user.html">Stefan Bajić</a></strong>
+                            <span class="text-muted">sent feedback 1 day ago</span>
+                            <span class="text-muted" id="category">Suggestion</span>
+                        </div>
+                        <div class="panel-body">
+                            Volim da smaram.
+                            <div class="delete"><a id="delete-feedback" href="#" onclick="deleteFeedback('feedback1')"><i class="fa fa-times fa-2x"></i></a></div>
+                        </div>
+                        <!-- /panel-body -->
+                    </div>
+                    <!-- /panel panel-default -->
+                </div>
+            </div>
+            <div class="row" id="feedback2">
+                <!-- /col-sm-5 -->
+                <div class="col-sm-1 col-sm-offset-0">
+                    <div class="thumbnail">
+                        <img class="img-responsive user-photo" src="img/default_user.png">
+                    </div>
+                    <!-- /thumbnail -->
+                </div>
+                <!-- /col-sm-1 -->
+                <div class="col-sm-7">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong><a href="user.html">Ana Peško</a></strong>
+                            <span class="text-muted">sent feedback 3 days ago</span>
+                            <span class="text-muted" id="category">User report</span>
+                        </div>
+                        <div class="panel-body">
+                            Ćaoooo ljudi
+                            <div class="delete"><a id="delete-feedback" href="#" onclick="deleteFeedback('feedback2')"><i class="fa fa-times fa-2x"></i></a></div>
+                        </div>
+                        <!-- /panel-body -->
+                    </div>
+                    <!-- /panel panel-default -->
+                </div>
+                <!-- /col-sm-5 -->
+            </div>
+            <!-- /row -->
+            <div class="row" id="feedback3">
+                <div class="col-sm-1 col-sm-offset-0">
+                    <div class="thumbnail">
+                        <img class="img-responsive user-photo" src="img/default_user.png">
+                    </div>
+                    <!-- /thumbnail -->
+                </div>
+                <!-- /col-sm-1 -->
+                <div class="col-sm-7">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong><a href="user.html">Brownbeard</a></strong>
+                            <span class="text-muted">sent feedback 184 years ago</span>
+                            <span class="text-muted" id="category">Event report</span>
+                        </div>
+                        <div class="panel-body">
+                            Har har.
+                            <div class="delete"><a id="delete-feedback" href="#" onclick="deleteFeedback('feedback3')"><i class="fa fa-times fa-2x"></i></a></div>
+                        </div>
+                        <!-- /panel-body -->
+                    </div>
+                    <!-- /panel panel-default -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-4">
+                </div>
+                <div class="col-lg-4">
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-muted">Copyright &copy; Untitled(1).tim 2016</h5>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/shared.js"></script>
+
+    <!-- Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

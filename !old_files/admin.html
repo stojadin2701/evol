@@ -1,0 +1,141 @@
+<!-- Author: Stefan Bajic -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Admin</title>
+        
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="img/icon.png"/>
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/shared.css" rel="stylesheet">
+        <link href="css/admin.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body onload="userCheck()">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img class="navbar-brand navbar-brand-img" src="img/icon.png">
+                    <a class="navbar-brand navbar-brand-text" href="index.html">evol</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li id="home">
+                            <a href="home.html">Home</a>
+                        </li>                        
+                        <li>
+                            <a href="index.html">Events</a>
+                        </li>
+                        <li id = "feedback">
+                            <a href="feedback.html">Feedback</a>
+                        </li>
+                        <li id="mod">
+                            <a href="mod.html">Mod</a>
+                        </li>
+                        <li id="admin">
+                            <a href="admin.html">Admin</a>
+                        </li>
+                        <li id="register">
+                            <a href="register.html">Register</a>
+                        </li>
+                        <li id="login">
+                            <a href="login.html">Login</a>
+                        </li>
+                        <li id="logout">
+                            <a href="#" onclick="logout()">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div> <!-- /.container -->
+        </nav> 
+
+        <div class="container">
+            <div class="panel panel-primary">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Users</div>
+                <div class="panel-body">
+                    <p>After selecting a user you can grant or take away moderator privileges.</p>
+                </div>
+                <!-- Search -->
+                <div class="input-group">      
+                    <input type="text" class="form-control search-input" placeholder="Search by username...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default search-icon" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                </div>
+                <!-- List group -->
+                <div class="list-group" data-toggle="items">
+                    <a href="#" class="list-group-item">Kathrine Shute</a>
+                    <a href="#" class="list-group-item">Yoshie Gregory</a>
+                    <a href="#" class="list-group-item">Gregorio Ormiston</a>
+                    <a href="#" class="list-group-item">Brad Dentler</a>
+                    <a href="#" class="list-group-item">Almeda Hunsberger</a>
+                    <a href="#" class="list-group-item">Lela Batista</a>
+                    <a href="#" class="list-group-item">Lala Borgmann</a>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="btn-group-lg" role="group" aria-label="...">
+                    <button type="button" class="btn btn-primary" onclick="grant()">Grant</button>
+                    <button type="button" class="btn btn-danger" onclick="deny()">Deny</button>
+                </div>
+            </div>
+        </div> <!-- /.container -->
+
+        <div class="container">
+            <hr>
+            <!-- Footer -->
+            <footer>
+                <div class="row">
+                    <div class="col-lg-4">
+					</div>
+					<div class="col-lg-4">
+					</div>
+                    <div class="col-lg-4">
+                        <h5 class="text-muted">Copyright &copy; Untitled(1).tim 2016</h5>
+                    </div>
+                </div>
+            </footer>
+        </div> <!-- /.container -->
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/listgroup.js" data-cover></script>
+        
+        <!-- Custom JavaScript -->
+        <script src="js/shared.js"></script>
+
+        <!-- Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+
+        <!-- Custom JavaScript -->
+        <script src="js/admin.js"></script>
+    </body>
+</html>

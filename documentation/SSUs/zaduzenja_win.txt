@@ -1,0 +1,14 @@
+Registracija korisnika				1
+Autentikacija korisnika				4
+Pregled dogadjaja			3
+Pravljenje dogadjaja			3
+Brisanje dogadjaja			2
+Prijavljivanje na dogadjaj		4
+Pregled licnih i pohadjanih dogadjaja	4
+Komentarisanje dogadjaja		3
+Evidencija prisutnosti i angazovanja		1
+Izmena dogadjaja			2
+Korisnicki feedback			2
+Moderiranje				1
+Pregled korisnickih profila		2
+Imenovanje moderatora i oduzimanje moderatorskih prava		4

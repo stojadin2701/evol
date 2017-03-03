@@ -1,0 +1,113 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[serbian]{babel}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\renewcommand*\contentsname{Sadržaj}
+
+\begin{document}
+
+\begin{titlepage}
+
+\centering
+\textnormal{\large Elektrotehnički fakultet Univerziteta u Beogradu}\\[0.1cm]
+\textnormal{\large Prinicipi softverskog inženjerstva}\\[3cm]
+
+\textnormal{\normalsize - Platforma za organizovanje volonterskih akcija -}\\\vspace{-5mm}
+\rule{\textwidth}{0.4pt}
+{\huge \bfseries Specifikacija scenarija upotrebe:\\ 
+IZMENA DOGAĐAJA\par}\vspace{-1mm}
+\rule{\textwidth}{0.4pt}\\\vspace{1mm}
+\textnormal{\large Autor: Ana Peško}\\[6cm]
+
+\includegraphics[scale=0.5]{logo.jpg}\\
+\vfill
+\textnormal{\normalsize Verzija 1.0}\\
+
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+\section{Uvod}
+\subsection{Rezime}
+Definisanje scenarija upotrebe pri izmeni događaja, sa primerima odgovarajućih HTML stranica.
+\subsection{Namena dokumenta i ciljne grupe}
+Dokument će koristiti svi članovi projektnog tima u razvoju projekta i testiranju, a može se koristiti i pri pisanju uputstva za upotrebu.
+\subsection{Reference}
+\begin{enumerate}
+    \item Projektni zadatak
+    \item Uputstvo za pisanje specifikacije scenarija upotrebe funkcionalnosti
+\end{enumerate}
+\subsection{Otvorena pitanja}
+\begin{center}
+\begin{tabular}{| >{\centering\arraybackslash}m{1.9cm} | >{\centering\arraybackslash}m{4.9cm} | >{\centering\arraybackslash}m{4.9cm} |}
+\hline
+\rowcolor[HTML]{000000} 
+{\color[HTML]{FFFFFF} Redni broj } & {\color[HTML]{FFFFFF} Opis } & {\color[HTML]{FFFFFF} Rešenje } \\ \hline
+ 1 & Šta se dešava ukoliko korisnik ne izmeni ništa u događaju a klikne na dugme \textit{Save}? & \\ \hline
+ &  &  \\ \hline
+ &  &  \\ \hline
+ &  &  \\ \hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+\section{Scenario izmene događaja}
+\subsection{Kratak opis}
+Tvorac događaja u svakom trenutku može vršiti proizvoljne modifikacije teksta stranice događaja kao i dodavanje novih slika a potom se te izmene šalju određenom moderatoru radi provere.
+\subsection{Tok događaja}
+\subsubsection{\underline{Korisnik uspešno menja događaj}}
+\begin{enumerate}
+    \item Korisnik odabirom polja \textit{Home} dolazi na stranicu za pregled ličnih i pohađanih događaja
+    \item Korisnik pregleda događaje koje trenutno organizuje (lične događaje)
+    \item Korisnik odabirom događaja koji želi da promeni (klikom na ikonicu za izmenu) dolazi na stranicu za kreiranje događaja popunjenu trenutnim informacijama o događaju
+    \item Korisnik menja željene informacije o događaju
+    \item Korisnik klikom na dugme \textit{Save Changes} čuva izmene
+    \item Sistem prosleđuje zahtev za izmenom moderatoru na odobravanje i vraća korisnika na stranicu za pregled ličnih i pohađanih događaja
+\end{enumerate}
+
+\subsubsection{Korisnik bira da ne promeni događaj}
+\begin{enumerate}
+    \item Akcije 1-4 iz scenarija 2.2.1 su iste
+    \item Korisnik klikom na dugme \textit{Discard Changes} odustaje od izmene događaja
+    \item Sistem vraća korisnika na stranicu za pregled ličnih i pohađanih događaja bez prosleđivanja zahteva za izmenom moderatoru na odobravanje
+\end{enumerate}
+
+\subsection{Posebni zahtevi}
+Nema.
+\subsection{Preduslovi}
+Korisnik je ulogovan na sistem i organizator je bar jednog aktuelnog događaja.
+\subsection{Posledice}
+U slučaju uspešnog scenarija, izmene događaja su poslate moderatoru, a u suprotnom izmene se ne šalju.
+
+\newpage
+
+\section{Spisak izmena}
+\begin{center}
+\begin{tabular}{| >{\centering\arraybackslash}m{2cm} | >{\centering\arraybackslash}m{1.3cm} | >{\centering\arraybackslash}m{4.2cm} | >{\centering\arraybackslash}m{4.2cm} |}
+\hline
+\rowcolor[HTML]{000000} 
+{\color[HTML]{FFFFFF} Datum } & {\color[HTML]{FFFFFF} Verzija } & {\color[HTML]{FFFFFF} Opis } & {\color[HTML]{FFFFFF} Autor } \\ \hline
+12.03.2016 & 1.0 & Osnovna verzija & Ana Peško \\ \hline
+ &  &  &  \\ \hline
+ &  &  &  \\ \hline
+ &  &  &  \\ \hline
+
+\end{tabular}
+\end{center}
+
+\end{document}

@@ -1,0 +1,30 @@
+/*!* Author: Stefan Bajic *!*/
+
+.approve a {
+    color: #5cb85c;
+}
+
+.remove a {
+    color: #d9534f;
+}
+
+.caption {
+    position: relative;
+}
+
+.approve {
+    position: absolute;
+    bottom: 10px;
+    right: 45px;
+}
+
+.remove {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+}
+
+p {
+    word-break: break-all;
+    white-space: normal;
+}
